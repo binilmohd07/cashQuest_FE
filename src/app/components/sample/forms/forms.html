@@ -1,0 +1,27 @@
+<h2>
+    Reactive forms
+</h2>
+
+<h4>From Control</h4>
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name" />
+<p>{{name.value}}</p>
+<button type="button" (click)="updateName()">Update Name</button>
+
+<br>
+<h4>
+    Form Group - Fixed set of controls
+</h4>
+<form action="" [formGroup]="profileForm" (ngSubmit)="submitProfile()">
+    <label for="name">First Name: </label>
+    <input id="name" type="text" formControlName="firstName" />
+    <br>
+    <label for="name">Last Name: </label>
+    <input id="name" type="text" formControlName="lastName" />
+    <br>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+<h4>
+    Form Builder
+</h4>
